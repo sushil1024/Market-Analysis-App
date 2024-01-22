@@ -28,7 +28,7 @@ templates = Jinja2Templates(directory="templates")
 
 @app.get("/", response_class=HTMLResponse)
 def index_one(request: Request):
-    return templates.TemplateResponse("upload.html", {"request": request})
+    return templates.TemplateResponse("index.html", {"request": request})
 
 @app.post("/output")
 def upload_data(request: Request, File: UploadFile = File(...)):
