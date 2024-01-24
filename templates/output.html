@@ -4,22 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Output Data</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 36px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            overflow-x: auto;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #4caf50;
+            color: white;
+        }
+
+        h2 {
+            color: #333;
+            font-size: 24px;
+        }
+
+        p {
+            margin: 0;
+            color: #555;
+            font-size: 18px;
+        }
+    </style>
 </head>
 <body>
     <h1>Calculated Data</h1>
 
-    <table border="1">
-        <tr>
-            <th>Date</th>
-            <th>Daily Returns</th>
-        </tr>
-        {% for row in dataframe['DataFrame'] %}
-        <tr>
-            <td>{{ row['Date'] }}</td>
-            <td>{{ row['Daily Returns'] }}</td>
-        </tr>
-        {% endfor %}
-    </table>
+    <div style="overflow-x: auto;">
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Daily Returns</th>
+            </tr>
+            {% for row in dataframe['DataFrame'] %}
+            <tr>
+                <td>{{ row['Date'] }}</td>
+                <td>{{ row['Daily Returns'] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
 
     <br>
 
